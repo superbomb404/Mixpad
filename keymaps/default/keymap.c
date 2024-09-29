@@ -59,6 +59,10 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     return true;
 }
 
+oled_rotation_t oled_init_user(oled_rotation_t rotation) {
+    return OLED_ROTATION_90;
+}
+
 bool oled_task_user(void) {
     oled_write_P(PSTR("Test1"),false);
     oled_set_cursor(10,1);

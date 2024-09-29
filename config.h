@@ -24,5 +24,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define I2C_DRIVER I2CD1
 // #define I2C1_SCL_PAL_MODE 3
 // #define I2C1_SDA_PAL_MODE 3
-#define OLED_DISPLAY_ADDRESS 0x3C
+// #define OLED_DISPLAY_ADDRESS 0x3C
 #define OLED_DISPLAY_128X64
