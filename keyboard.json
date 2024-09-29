@@ -52,7 +52,7 @@
         "rotary": [
             {"pin_a": "GP6", "pin_b": "GP7", "resolution": 3},
             {"pin_a": "GP4", "pin_b": "GP5", "resolution": 3},
-            {"pin_a": "GP2", "pin_b": "GP3", "resolution": 3},
+            // {"pin_a": "GP2", "pin_b": "GP3", "resolution": 3},
             {"pin_a": "GP19", "pin_b": "GP18", "resolution": 3},
             {"pin_a": "GP21", "pin_b": "GP20", "resolution": 3},
             {"pin_a": "GP10", "pin_b": "GP11", "resolution": 3},

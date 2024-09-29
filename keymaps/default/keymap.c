@@ -58,3 +58,12 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     }
     return true;
 }
+
+bool oled_task_user(void) {
+    oled_write_P(PSTR("Test1"),false);
+    oled_set_cursor(10,1);
+    oled_write_P(PSTR("Test2\n"),false);
+    oled_write_P(PSTR("Test3"),false);
+    return false;
+}
+

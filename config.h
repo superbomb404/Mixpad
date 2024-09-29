@@ -19,3 +19,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define MK_3_SPEED
 #define TERMINAL_HELP
+#define I2C_SDA_PIN GP2  // 将 SDA 引脚设置为 GP1
+#define I2C_SCL_PIN GP3  // 将 SCL 引脚设置为 GP0
+#define I2C_DRIVER I2CD1
+// #define I2C1_SCL_PAL_MODE 3
+// #define I2C1_SDA_PAL_MODE 3
+#define OLED_DISPLAY_ADDRESS 0x3C
