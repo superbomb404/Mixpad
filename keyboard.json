@@ -9,24 +9,6 @@
         "device_version": "1.0.0",
         "force_nkro": true
     },
-    "rgblight": {
-        "led_count": 1,
-        "animations": {
-            "breathing": true,
-            "rainbow_mood": true,
-            "rainbow_swirl": true,
-            "snake": true,
-            "knight": true,
-            "christmas": true,
-            "static_gradient": true,
-            "rgb_test": true,
-            "alternating": true,
-            "twinkle": true
-        }
-    },
-    "ws2812": {
-        "pin": "GP23"
-    },
     "features": {
         "bootmagic": true,
         "command": false,
@@ -45,18 +27,18 @@
     },
     "matrix_pins": {
         "cols": ["GP22", "GP26", "GP27", "GP28", "GP29"],
-        "rows": ["GP17", "GP15", "GP14", "GP13", "GP12"]
+        "rows": ["GP17", "GP15", "GP14", "GP12", "GP13"]
     },
     "diode_direction": "COL2ROW",
     "encoder": {
         "rotary": [
-            {"pin_a": "GP6", "pin_b": "GP7", "resolution": 3},
-            {"pin_a": "GP4", "pin_b": "GP5", "resolution": 3},
-            {"pin_a": "GP0", "pin_b": "GP1", "resolution": 3},
-            {"pin_a": "GP19", "pin_b": "GP18", "resolution": 3},
-            {"pin_a": "GP21", "pin_b": "GP20", "resolution": 3},
-            {"pin_a": "GP10", "pin_b": "GP11", "resolution": 3},
-            {"pin_a": "GP8", "pin_b": "GP9", "resolution": 3}
+            {"pin_a": "GP6", "pin_b": "GP7", "resolution": 4},
+            {"pin_a": "GP4", "pin_b": "GP5", "resolution": 4},
+            {"pin_a": "GP0", "pin_b": "GP1", "resolution": 4},
+            {"pin_a": "GP19", "pin_b": "GP18", "resolution": 4},
+            {"pin_a": "GP21", "pin_b": "GP20", "resolution": 4},
+            {"pin_a": "GP10", "pin_b": "GP11", "resolution": 4},
+            {"pin_a": "GP8", "pin_b": "GP9", "resolution": 4}
         ]
     },
     "processor": "RP2040",
