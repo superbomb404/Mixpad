@@ -17,11 +17,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [FN] = LAYOUT(
-                     XXXXXXX, UG_NEXT, XXXXXXX, XXXXXXX,
-                     EE_CLR,  XXXXXXX, UG_TOGG, XXXXXXX,
-        TO(DEFAULT), QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX,
+                     RGB_SPD, RGB_SPI, RGB_RMOD, RGB_MOD,
+                     EE_CLR,  RGB_TOG, XXXXXXX,  XXXXXXX,
+        TO(DEFAULT), QK_BOOT, XXXXXXX, XXXXXXX,  XXXXXXX,
         KC_F13,      KC_F14,  XXXXXXX, XXXXXXX, 
-        KC_F15,      KC_F16,  KC_F17,  KC_F18,  KC_F19
+        KC_F15,      KC_F16,  KC_F17,  KC_F18,   KC_F19
     ),
 };
 
