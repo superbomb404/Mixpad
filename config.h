@@ -33,7 +33,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define OLED_DISPLAY_128X64  //设置屏幕分辨率
 #define OLED_BRIGHTNESS 255  //设置屏幕亮度
 // #define OLED_SCROLL_TIMEOUT 300000          //在 OLED 静止 300000 毫秒(300秒)后滚动 OLED 屏幕 设置为 0 则禁用
-#define OLED_TIMEOUT 600000                    //在 OLED 更新 600000 毫秒(600秒)后关闭 OLED 屏幕 设置为 0 则禁用
+#define OLED_TIMEOUT 120000                    //在 OLED 更新 120000 毫秒(120秒)后关闭 OLED 屏幕 设置为 0 则禁用
 // #define I2C1_DUTY_CYCLE FAST_DUTY_CYCLE_2   //设置i2c通信为快速模式(提高屏幕刷新率)
 // #define I2C1_CLOCK_SPEED 400000             //设置i2c通信速率(提高屏幕刷新率)
 
@@ -42,9 +42,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define OLED_DISPLAY_HEIGHT 64
 
 
-//RGB阵列
-#define WS2812_DI_PIN GP16
-// #define WS2812_LED_COUNT 22
-#define RGB_MATRIX_LED_COUNT 22
+// //RGB阵列
+// #define WS2812_DI_PIN GP16
+// // #define WS2812_LED_COUNT 22
+// #define RGB_MATRIX_LED_COUNT 22
 // #define RGBLIGHT_LED_COUNT 22
-#define ENABLE_RGB_MATRIX_CYCLE_ALL
+// #define ENABLE_RGB_MATRIX_CYCLE_ALL
+
+
+/* Required for SH1106 Oled Driver */
+#define OLED_IC OLED_IC_SH1106
+#define OLED_COLUMN_OFFSET 2 // SH1106 screen is a little off to the left
+
+#define I2C1_TIMINGR_PRESC 0x00U
+#define I2C1_TIMINGR_SCLDEL 0x03U
+#define I2C1_TIMINGR_SDADEL 0x01U
+#define I2C1_TIMINGR_SCLH 0x03U
+#define I2C1_TIMINGR_SCLL 0x09U
+
+#define OLED_UPDATE_INTERVAL 66

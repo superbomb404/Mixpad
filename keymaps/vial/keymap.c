@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 };
 
-
+/*
 //RGB
 led_config_t g_led_config = { {
   // Key Matrix to LED Index
@@ -65,6 +65,7 @@ led_config_t g_led_config = { {
   4, 4, 4, 4,
   4, 4, 4, 4, 4
 } };
+*/
 
 
 
@@ -72,16 +73,14 @@ led_config_t g_led_config = { {
 
 
 
-
-/*
 // 屏幕旋转90度
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     return OLED_ROTATION_90;
 }
-*/
 
 
 //显示测试文字
+/*
 bool oled_task_user(void) {
     oled_write_P(PSTR("Test1"),false);
     oled_set_cursor(10,1);
@@ -89,7 +88,7 @@ bool oled_task_user(void) {
     oled_write_P(PSTR("Test3"),false);
     return false;
 }
-
+*/
 
 
 
@@ -110,7 +109,6 @@ bool oled_task_user(void) {
 
 
 
-/*
 // 显示当前的键层，并且显示大写锁定与数字键盘锁定的信息
 #ifdef OLED_ENABLE
 bool oled_task_user(void) {
@@ -138,8 +136,6 @@ bool oled_task_user(void) {
     return false;
 }
 #endif
-*/
-
 
 
 //编码器配置
