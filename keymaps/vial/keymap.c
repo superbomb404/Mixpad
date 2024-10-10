@@ -1,19 +1,3 @@
-/*
-Copyright 2020 MisonoWorks
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
 
 #include QMK_KEYBOARD_H
 
@@ -41,35 +25,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 };
 
-/*
-//RGB
-led_config_t g_led_config = { {
-  // Key Matrix to LED Index
-  { NO_LED, 0, 1, 2, 3 },
-  { NO_LED, 4, 5, 6, 7 },
-  { 8, 9, 10, 11, 12 },
-  { 13, 14, 15, 16, NO_LED },
-  { 17, 18, 19, 20, 21 }
-}, {
-  // LED Index to Physical Position
-  			 { 1,  4 }, { 2,  4 }, { 3,  4 }, { 4,  4 },
-  			 { 1,  3 }, { 2,  3 }, { 3,  3 }, { 4,  3 },
-  { 0,  2 }, { 1,  2 }, { 2,  2 }, { 3,  2 }, { 4,  2 }, 
-  { 0,  1 }, { 1,  1 }, { 2,  1 }, { 3,  1 },
-  { 0,  0 }, { 1,  0 }, { 2,  0 }, { 3,  0 }, { 4,  0 }
-}, {
-  // LED Index to Flag
-     4, 4, 4, 4,
-     4, 4, 4, 4,
-  4, 4, 4, 4, 4,
-  4, 4, 4, 4,
-  4, 4, 4, 4, 4
-} };
-*/
-
-
-
-
+//编码器配置
+#if defined(ENCODER_MAP_ENABLE)
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
+    [DEFAULT] =   { ENCODER_CCW_CW(KC_VOLU, KC_VOLD), ENCODER_CCW_CW(KC_F13, KC_F14), ENCODER_CCW_CW(KC_F15, KC_F16), ENCODER_CCW_CW(KC_F17, KC_F18), ENCODER_CCW_CW(KC_F19, KC_F20), ENCODER_CCW_CW(KC_F21, KC_F22), ENCODER_CCW_CW(KC_UP, KC_DOWN)  },
+    //                                 Encoder 1                              Encoder 2                         Encoder 3                         Encoder 4                     Encoder 5                      Encoder 6                      Encoder 7
+    [FN] =        { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)  }
+    //                    Encoder 1                          Encoder 2
+};
+#endif
 
 
 
@@ -77,20 +41,6 @@ led_config_t g_led_config = { {
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     return OLED_ROTATION_90;
 }
-
-
-//显示测试文字
-/*
-bool oled_task_user(void) {
-    oled_write_P(PSTR("Test1"),false);
-    oled_set_cursor(10,1);
-    oled_write_P(PSTR("Test2\n"),false);
-    oled_write_P(PSTR("Test3"),false);
-    return false;
-}
-*/
-
-
 
 
 //显示图片
@@ -138,12 +88,3 @@ bool oled_task_user(void) {
 #endif
 
 
-//编码器配置
-#if defined(ENCODER_MAP_ENABLE)
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-    [DEFAULT] =   { ENCODER_CCW_CW(KC_VOLU, KC_VOLD), ENCODER_CCW_CW(KC_F13, KC_F14), ENCODER_CCW_CW(KC_F15, KC_F16), ENCODER_CCW_CW(KC_F17, KC_F18), ENCODER_CCW_CW(KC_F19, KC_F20), ENCODER_CCW_CW(KC_F21, KC_F22), ENCODER_CCW_CW(KC_UP, KC_DOWN)  },
-    //                                 Encoder 1                              Encoder 2                         Encoder 3                         Encoder 4                     Encoder 5                      Encoder 6                      Encoder 7
-    [FN] =        { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)  }
-    //                    Encoder 1                          Encoder 2
-};
-#endif
