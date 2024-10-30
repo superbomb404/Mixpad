@@ -7,6 +7,8 @@ enum layers {
     FN1
 };
 
+#define ANTIMATION_FRAME_)SIZE 128
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [DEFAULT] = LAYOUT(
 //       col0        col1    col2    col3     col4
@@ -38,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [DEFAULT] =   { ENCODER_CCW_CW(KC_VOLU, KC_VOLD), ENCODER_CCW_CW(KC_F13, KC_F14), ENCODER_CCW_CW(KC_F15, KC_F16), ENCODER_CCW_CW(KC_F17, KC_F18), ENCODER_CCW_CW(KC_F19, KC_F20), ENCODER_CCW_CW(KC_F21, KC_F22), ENCODER_CCW_CW(KC_UP, KC_DOWN)  },
-    //                                 Encoder 1                              Encoder 2                         Encoder 3                         Encoder 4                     Encoder 5                      Encoder 6                      Encoder 7
+    //                         Encoder 1                          Encoder 2                         Encoder 3                      Encoder 4                     Encoder 5                      Encoder 6                       Encoder 7
     [FN] =        { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)  },
     //                    Encoder 1                          Encoder 2
     [FN1] =       { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)  }
