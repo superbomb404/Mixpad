@@ -7,7 +7,6 @@ enum layers {
     FN1
 };
 
-#define ANTIMATION_FRAME_)SIZE 128
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [DEFAULT] = LAYOUT(
@@ -49,10 +48,17 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 #endif
 
 
-
+/*
 // 屏幕旋转90度
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     return OLED_ROTATION_90;
+}
+*/
+
+
+// 屏幕旋转270度
+oled_rotation_t oled_init_user(oled_rotation_t rotation) {
+    return OLED_ROTATION_270;
 }
 
 
